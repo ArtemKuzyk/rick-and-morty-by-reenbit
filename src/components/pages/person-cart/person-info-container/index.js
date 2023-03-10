@@ -1,0 +1,1 @@
+export { PersonInfoContainer } from "./PersonInfoContainer";

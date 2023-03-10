@@ -3,7 +3,8 @@ import { CharactersProvider } from './hooks/useCharacters';
 import { CharacterData, DATA_URL } from './services/dataLoader';
 import { LocalStorageService, LS_KEYS } from './services/localStorage';
 import { Header } from './components/header';
-import { ContentCart } from './components/content-cart';
+import { ContentList } from './components/content-list';
+import { PersonCart } from './components/pages/person-cart/PersonCrat';
 
 import './App.css';
 
@@ -17,14 +18,15 @@ function App() {
     setCharacter(LocalStorageService.get(LS_KEYS.CHARACTERS));
   }, []);
 
-  useEffect(() => console.log(typeof character))
+  //useEffect(() => console.log(typeof character))
 
   return (
     <div className="App">
       {/* <CharactersProvider> */}
-        <Header />
+        {/* <Header /> */}
         <main>
-          {character.map(data => <ContentCart key={data.id} data={data}/>)}
+          {/* {character.map(data => <ContentList key={data.id} data={data}/>)} */}
+          <PersonCart data={character[0]}/>
         </main>
         {/* <ContentCart /> */}
       {/* </CharactersProvider> */}

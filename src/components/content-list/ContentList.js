@@ -1,8 +1,8 @@
 
 
-import './content-cart.css'
+import './content-list.css'
 
-export function ContentCart(props){
+export function ContentList(props){
 
     let data = props.data;
     console.log(data)
