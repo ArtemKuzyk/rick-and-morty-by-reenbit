@@ -1,6 +1,6 @@
 
-import shape from '../../../assets/Shape.svg'
-import vector from '../../../assets/Vector.svg'
+import shape from '../../../../../assets/Shape.svg'
+import vector from '../../../../../assets/Vector.svg'
 import './searchField.css';
 
 export function SearchField() {
