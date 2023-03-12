@@ -7,8 +7,11 @@ class CharacterData{
     static async set(path){
         return fetch(path)
         .then((response) => response.json())
-        .then((data) => data['results'])
-        .then((result) => LocalStorageService.set(LS_KEYS.CHARACTERS, result))
+        .then((data) => {
+            // console.log(data)
+            LocalStorageService.set(LS_KEYS.CHARACTERS, data['results']);
+            LocalStorageService.set(LS_KEYS.INFO, data['info']);
+        })
         .catch(() => alert("Sorry, character-services dosn`t work"))
     }
 }

@@ -48,11 +48,14 @@
   }
   form .search-field button img[alt=searchImg] {
     left: 0;
+    margin: 0;
   }
   form .search-field button img[alt=shape] {
     display: none;
+    margin: 0;
   }
   form .search-field .button__right {
+    display: none;
     right: 0;
   }
   form .search-field .button__left {

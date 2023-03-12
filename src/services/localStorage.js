@@ -1,6 +1,7 @@
 const LS_KEYS = {
     NAME : "name",
-    CHARACTERS : "characters"
+    CHARACTERS : "characters",
+    INFO : "info"
 }
 
 class LocalStorageService {
