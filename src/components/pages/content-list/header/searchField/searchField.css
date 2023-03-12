@@ -20,8 +20,7 @@
     border: 1px solid rgba(0, 0, 0, 0.3137254902);
     border-radius: 8px;
     box-sizing: border-box;
-    color: rgba(0, 0, 0, 0.3137254902);
-    cursor: pointer;
+    cursor: text;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -30,6 +29,16 @@
     width: 312px;
   }
   form .search-field img {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  form .search-field button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
     height: 24px;
     margin: 16px;
     padding: 4px 3px;
@@ -37,12 +46,17 @@
     top: 0;
     width: 24px;
   }
-  form .search-field img[alt=searchImg] {
+  form .search-field button img[alt=searchImg] {
     left: 0;
   }
-  form .search-field img[alt=shape] {
-    right: 0;
+  form .search-field button img[alt=shape] {
     display: none;
+  }
+  form .search-field .button__right {
+    right: 0;
+  }
+  form .search-field .button__left {
+    left: 0;
   }
 }
 @media screen and (min-width: 768px) {

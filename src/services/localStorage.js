@@ -1,9 +1,6 @@
 const LS_KEYS = {
-    USER : "user",
+    NAME : "name",
     CHARACTERS : "characters"
-    // BOOK_LIST : "books",
-    // CART_LIST : "selectedBooks",
-    // SPECIFIC_BOOK : "specific-book",
 }
 
 class LocalStorageService {
