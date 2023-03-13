@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './paginstion.css'
 
 
@@ -21,17 +21,17 @@ export function Pagination(props){
 
     return(
         <div className='pagination'>
-            <Link onClick={()=>{handleSetCurrentPage(currentPage - 1)}}>&#8592;</Link>
-            <Link className={(+currentPage === min ? 'active' : null)} onClick={(e)=>{handleSetCurrentPage(e)}}>{min}</Link>
-            {+currentPage > min + 3 ? <span className='pagination-link-dispaly' >...</span> : null}
-            {+currentPage === min || currentPage - 2 === min || currentPage - 2 < min ? null : <Link onClick={(e)=>{handleSetCurrentPage(e)}} className='pagination-link-dispaly'>{currentPage - 2}</Link>}
-            {+currentPage === min || currentPage - 1 === min ? null : <Link onClick={(e)=>{handleSetCurrentPage(e)}} className='pagination-link-dispaly'>{currentPage - 1}</Link >}
-            {+currentPage === max || +currentPage === min ? null : <Link className='active'>{currentPage}</Link>}
-            {+currentPage === max || +currentPage + 1 === max ? null : <Link onClick={(e)=>{handleSetCurrentPage(e)}} className='pagination-link-dispaly'>{+currentPage + 1}</Link>}
-            {+currentPage === max || +currentPage + 2 === max ||  +currentPage + 2 > max ? null : <Link onClick={(e)=>{handleSetCurrentPage(e)}} className='pagination-link-dispaly'>{+currentPage + 2}</Link>}
-            {+currentPage < max - 3 ? <span className='pagination-link-dispaly' >...</span> : null}
-            <Link className={(+currentPage === max ? 'active' : null)} onClick={(e)=>{handleSetCurrentPage(e)}}>{max}</Link>
-            <Link onClick={()=>{handleSetCurrentPage(+currentPage + 1)}}>&#8594;</Link>
+            <button onClick={()=>{handleSetCurrentPage(currentPage - 1)}}>&#8592;</button>
+            <button className={(+currentPage === min ? 'active' : null)} onClick={(e)=>{handleSetCurrentPage(e)}}>{min}</button>
+            {+currentPage > min + 3 ? <span className='pagination-button-dispaly' >...</span> : null}
+            {+currentPage === min || currentPage - 2 === min || currentPage - 2 < min ? null : <button onClick={(e)=>{handleSetCurrentPage(e)}} className='pagination-button-dispaly'>{currentPage - 2}</button>}
+            {+currentPage === min || currentPage - 1 === min ? null : <button onClick={(e)=>{handleSetCurrentPage(e)}} className='pagination-button-dispaly'>{currentPage - 1}</button >}
+            {+currentPage === max || +currentPage === min ? null : <button className='active'>{currentPage}</button>}
+            {+currentPage === max || +currentPage + 1 === max ? null : <button onClick={(e)=>{handleSetCurrentPage(e)}} className='pagination-button-dispaly'>{+currentPage + 1}</button>}
+            {+currentPage === max || +currentPage + 2 === max ||  +currentPage + 2 > max ? null : <button onClick={(e)=>{handleSetCurrentPage(e)}} className='pagination-button-dispaly'>{+currentPage + 2}</button>}
+            {+currentPage < max - 3 ? <span className='pagination-button-dispaly' >...</span> : null}
+            <button className={(+currentPage === max ? 'active' : null)} onClick={(e)=>{handleSetCurrentPage(e)}}>{max}</button>
+            <button onClick={()=>{handleSetCurrentPage(+currentPage + 1)}}>&#8594;</button>
         </div>
     );
 }
