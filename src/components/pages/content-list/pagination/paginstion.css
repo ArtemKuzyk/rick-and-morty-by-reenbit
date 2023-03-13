@@ -30,4 +30,10 @@
   transition: background-color 0.3s;
   border: 1px solid #ddd;
   margin: 0 4px;
+}
+
+@media screen and (max-width: 767.9px) {
+  .pagination-link-dispaly {
+    display: none;
+  }
 }/*# sourceMappingURL=paginstion.css.map */
