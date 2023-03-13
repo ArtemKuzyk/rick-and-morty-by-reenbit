@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { HashRouter } from 'react-router-dom';
-// import { CharacterData, DATA_URL } from './services/dataLoader';
 import { LocalStorageService, LS_KEYS } from './services/localStorage';
 import { CharactersProvider } from './hooks/useCharacters';
 import AppRoutes from './routes/router';
