@@ -72,7 +72,7 @@ export function ContentList(){
                 }) : null}
             </main>
             {
-                (LocalStorageService.get(LS_KEYS.INFO).pages > 1) ? <Pagination data={[currentPage, LocalStorageService.get(LS_KEYS.INFO).pages, setCurrentPage]}/> : ''
+                (LocalStorageService.get(LS_KEYS.INFO)?.pages > 1) ? <Pagination data={[currentPage, LocalStorageService.get(LS_KEYS.INFO).pages, setCurrentPage]}/> : ''
             }
         </>
     );
