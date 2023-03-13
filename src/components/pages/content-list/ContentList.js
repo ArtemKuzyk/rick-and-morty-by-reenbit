@@ -49,6 +49,12 @@ export function ContentList(){
         }
     }
 
+    // function checkLoginState() {
+    //     FB.getLoginStatus(function(response) {
+    //       statusChangeCallback(response);
+    //     });
+    // }
+
     useEffect(() => {
         setCharacters(LocalStorageService.remove(LS_KEYS.CHARACTERS));
         if(characterName === '') {
@@ -63,6 +69,9 @@ export function ContentList(){
     return(
         <>
             <Header />
+            <div id="fb-root"></div>
+            <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v16.0&appId=2268895256627157&autoLogAppEvents=1" nonce="xz4A82Il"></script>
+            <div className="fb-login-button" data-width="200px" data-size="" data-button-type="" data-layout="" data-auto-logout-link="true" data-use-continue-as="false"></div>
             <main>
                 {Array.isArray(characters)?
                 characters.map(el => {
