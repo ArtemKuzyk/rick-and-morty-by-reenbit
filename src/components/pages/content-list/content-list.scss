@@ -46,10 +46,10 @@
             }
         }
     }
-    .my-fb-container{
+    .fb-login-button{
         left: 0;
         margin: auto;
-        position: absolute;
+        position: absolute !important;
         right: 0;
         top: 15px;
     }
@@ -71,7 +71,7 @@
             }
         }
     }
-    .my-fb-container{
+    .fb-login-button{
         left: auto;
         right: 15px;
     }

@@ -44,10 +44,10 @@
     margin: 1px 16px 12px 16px;
     padding-bottom: 12px;
   }
-  .my-fb-container {
+  .fb-login-button {
     left: 0;
     margin: auto;
-    position: absolute;
+    position: absolute !important;
     right: 0;
     top: 15px;
   }
@@ -65,7 +65,7 @@
   .content_container .info-container .type-of-person {
     padding-bottom: 0;
   }
-  .my-fb-container {
+  .fb-login-button {
     left: auto;
     right: 15px;
   }
