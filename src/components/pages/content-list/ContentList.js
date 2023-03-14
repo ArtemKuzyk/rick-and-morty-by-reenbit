@@ -12,7 +12,7 @@ import './content-list.css'
 
 export function ContentList(){
 
-    const {characterName, setCharacterName} = useCharacters();
+    const {characterName} = useCharacters();
     // const [isPending, startTransition] = useTransition();
     const [currentPage, setCurrentPage] = useState(1);
     const [characters, setCharacters] = useState(LocalStorageService.get(LS_KEYS.CHARACTERS) || null);
@@ -38,23 +38,6 @@ export function ContentList(){
         }
     }, [characterName]);
 
-    const handlePaginationClick = (e, val) =>{
-        const info = LocalStorageService.get(LS_KEYS.INFO)
-        if(val === 'prev' && info.prev){
-            setCurrentPage(+currentPage - 1);
-        } else if(val === 'next' && info.next){
-            setCurrentPage(+currentPage + 1);
-        } else if(val !== 'prev' && val !== 'next'){
-            setCurrentPage(e.target.innerHTML);
-        }
-    }
-
-    // function checkLoginState() {
-    //     FB.getLoginStatus(function(response) {
-    //       statusChangeCallback(response);
-    //     });
-    // }
-
     useEffect(() => {
         setCharacters(LocalStorageService.remove(LS_KEYS.CHARACTERS));
         if(characterName === '') {
@@ -64,15 +47,16 @@ export function ContentList(){
             CharacterData.set(DATA_URL.PATH + `/?page=${currentPage}&name=${characterName}`)
             .then(() => setCharacters(LocalStorageService.get(LS_KEYS.CHARACTERS)));
         }
+        console.log(characters)
     }, [currentPage])
 
     return(
         <>
             <Header />
             <div id="fb-root"></div>
-            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v16.0&appId=2268895256627157&autoLogAppEvents=1" nonce="tOdeewMJ"></script>
+            <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v16.0&appId=2268895256627157&autoLogAppEvents=1" nonce="tOdeewMJ"></script>
             {/* <div className="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false"></div> */}
-            <div className="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="true"></div>
+            <div className="fb-login-button" data-width="300px" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="true"></div>
             <main>
                 {Array.isArray(characters)?
                 characters.map(el => {
