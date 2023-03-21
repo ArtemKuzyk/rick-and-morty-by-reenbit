@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/rick-and-morty-by-reenbit/static/css/main.f324500e.css",
-    "main.js": "/rick-and-morty-by-reenbit/static/js/main.f97d91a0.js",
+    "main.js": "/rick-and-morty-by-reenbit/static/js/main.59154552.js",
     "static/js/787.745e99b1.chunk.js": "/rick-and-morty-by-reenbit/static/js/787.745e99b1.chunk.js",
     "static/media/r-m-image.svg": "/rick-and-morty-by-reenbit/static/media/r-m-image.3ae60d1e07b2369066da6df04f8e95b4.svg",
     "index.html": "/rick-and-morty-by-reenbit/index.html",
@@ -9,11 +9,11 @@
     "static/media/Vector.svg": "/rick-and-morty-by-reenbit/static/media/Vector.77cfd6eef4ae63307cd8f1813909ed96.svg",
     "static/media/arrow_back_24px.svg": "/rick-and-morty-by-reenbit/static/media/arrow_back_24px.58acb58c0d6bedac27e8921bfdcfc28a.svg",
     "main.f324500e.css.map": "/rick-and-morty-by-reenbit/static/css/main.f324500e.css.map",
-    "main.f97d91a0.js.map": "/rick-and-morty-by-reenbit/static/js/main.f97d91a0.js.map",
+    "main.59154552.js.map": "/rick-and-morty-by-reenbit/static/js/main.59154552.js.map",
     "787.745e99b1.chunk.js.map": "/rick-and-morty-by-reenbit/static/js/787.745e99b1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f324500e.css",
-    "static/js/main.f97d91a0.js"
+    "static/js/main.59154552.js"
   ]
 }
