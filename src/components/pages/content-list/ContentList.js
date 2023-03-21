@@ -9,6 +9,7 @@ import { Header } from './header'
 import { ContentCart } from './content-cart/ContentCart';
 import { Pagination } from './pagination/Pagination';
 import './content-list.css'
+import { ErrorPage } from '../404page/ErrorPage';
 
 export function ContentList(){
 
@@ -68,15 +69,18 @@ export function ContentList(){
                     data-use-continue-as="true">
             </div>
             <main>
-                {Array.isArray(characters)?
-                characters.map(el => {
+                {Array.isArray(characters)
+                ? characters.map(el => {
                     return (<Link to='/person' key={el.id} state={{ data : el }} >
                         <ContentCart  data={el} />
                     </Link>);
-                }) : null}
+                }) 
+                : <ErrorPage />}
             </main>
             {
-                (LocalStorageService.get(LS_KEYS.INFO)?.pages > 1) ? <Pagination data={[currentPage, LocalStorageService.get(LS_KEYS.INFO).pages, setCurrentPage]}/> : ''
+                (LocalStorageService.get(LS_KEYS.INFO)?.pages > 1) 
+                ? <Pagination data={[currentPage, LocalStorageService.get(LS_KEYS.INFO).pages, setCurrentPage]}/> 
+                : ''
             }
         </>
     );

@@ -13,11 +13,15 @@ class CharacterData{
         return fetch(path)
         .then((response) => response.json())
         .then((data) => {
-            const resultData = sort(data['results']);
-            LocalStorageService.set(LS_KEYS.CHARACTERS, resultData);
-            LocalStorageService.set(LS_KEYS.INFO, data['info']);
+            if(!data.error){
+                const resultData = sort(data['results']);
+                LocalStorageService.set(LS_KEYS.CHARACTERS, resultData);
+                LocalStorageService.set(LS_KEYS.INFO, data['info']);
+            }
         })
-        .catch(() => alert("Sorry, character-services dosn`t work"))
+        .catch(() => {
+            alert("Sorry, character-services dosn`t work")
+        })
     }
 }
 

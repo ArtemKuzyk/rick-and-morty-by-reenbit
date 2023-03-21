@@ -7,6 +7,7 @@
     width: 100%;
   }
   .cart_container .cart_go-back-button {
+    font-family: "Karla", sans-serif;
     background-color: rgba(0, 0, 0, 0);
     border: none;
     cursor: pointer;
