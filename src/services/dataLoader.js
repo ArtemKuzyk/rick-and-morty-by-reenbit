@@ -17,6 +17,9 @@ class CharacterData{
                 const resultData = sort(data['results']);
                 LocalStorageService.set(LS_KEYS.CHARACTERS, resultData);
                 LocalStorageService.set(LS_KEYS.INFO, data['info']);
+            } else {
+                console.log('sdsd')
+                LocalStorageService.remove(LS_KEYS.INFO);
             }
         })
         .catch(() => {
