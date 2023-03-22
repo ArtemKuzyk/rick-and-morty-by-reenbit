@@ -24,7 +24,8 @@
       FB.getLoginStatus(function(response) {
         if (response.authResponse) {
           console.log('Welcome!  Fetching your information.... ');
-          handle_fb_data(response);
+          // handle_fb_data(response);
+          console.log(response)
         } else {
           console.log('Юзер был не залогинен в самом ФБ, запускаем окно логинизирования');
           FB.login(function(response){
