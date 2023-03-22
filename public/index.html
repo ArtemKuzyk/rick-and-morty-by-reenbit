@@ -20,18 +20,37 @@
   </head>
   <script>
 
+  function handle_fb_data(response){
+      FB.api('/me', function(response) {
+          console.log('Successful login for: ' + response.name);
+          console.log('Прилитело из ФБ: '+JSON.stringify(response));
+//            alert('Прилитело из ФБ: '+JSON.stringify(response));
+
+          // $.ajax({
+          //     type: 'post',
+          //     url: '/do/reg/fb',
+          //     data: response,
+          //     success: function(msg) {
+          //         console.log(msg);
+          //         if ((msg=='зарегались')||(msg=='залогинились')){window.location.reload();}
+          //     },
+          //     error: function(){}
+          // })
+      });
+  }
+
     function fb_login(){
       FB.getLoginStatus(function(response) {
         if (response.authResponse) {
           console.log('Welcome!  Fetching your information.... ');
-          // handle_fb_data(response);
+          handle_fb_data(response);
           console.log(response)
         } else {
           console.log('Юзер был не залогинен в самом ФБ, запускаем окно логинизирования');
           FB.login(function(response){
             if (response.authResponse) {
               console.log('Welcome!  Fetching your information.... ');
-              // handle_fb_data(response);
+              handle_fb_data(response);
               //here
               console.log(response)
             } else {
