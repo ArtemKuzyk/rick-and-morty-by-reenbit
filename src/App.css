@@ -3,6 +3,12 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.kep-login-facebook{
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
 @media screen and (min-width : 320px) {
   main{
     display: flex;

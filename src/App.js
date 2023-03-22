@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { HashRouter } from 'react-router-dom';
+import FacebookLogin from 'react-facebook-login';
 import { LocalStorageService, LS_KEYS } from './services/localStorage';
 import { CharactersProvider } from './hooks/useCharacters';
+import { UserIcon } from './components/pages/userIcon/UserIcon';
 import AppRoutes from './routes/router';
 
 import './App.css';
@@ -9,23 +11,24 @@ import './App.css';
 function App() {
 
   const [characterName, setCharacterName] = useState(LocalStorageService.get(LS_KEYS.NAME) || '');
+  const responseFacebook = (response) => {
+    console.log(response);
+    LocalStorageService.set(LS_KEYS.USER, response.name)
+  }
 
   return (
     <div className="App">
       <HashRouter basename='/'>
         <CharactersProvider value={{characterName, setCharacterName}}>
-        <div id="fb-root"></div>
-        <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v16.0&appId=2268895256627157&autoLogAppEvents=1" nonce="nDwFF2ej"></script>
-        <div  className="fb-login-button" 
-              data-width="300px" 
-              data-size="" 
-              data-button-type="" 
-              data-layout="" 
-              data-auto-logout-link="false" 
-              data-use-continue-as="true"
-              // onClick={fb_login()}
-              >
-        </div>
+        {(LocalStorageService.get(LS_KEYS.USER))
+        ? <UserIcon state={LocalStorageService.get(LS_KEYS.USER)} />
+        : <FacebookLogin
+              appId="1088597931155576"
+              autoLoad={true}
+              fields="name,email,picture"
+              // onClick={componentClicked}
+              callback={responseFacebook} />
+        }
           <AppRoutes />
         </CharactersProvider>
       </HashRouter>

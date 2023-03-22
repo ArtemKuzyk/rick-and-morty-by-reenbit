@@ -1,0 +1,17 @@
+.user-info{
+    align-items: center;
+    display: flex;
+    margin: auto;
+    position: absolute !important;
+    right: 15px;
+    top: 15px;
+    img{
+        height: 24px;
+        margin-right: 10px;
+        width: 24px;
+    }
+    p{
+        margin: 0;
+        font-size: 20px;
+    }
+}
