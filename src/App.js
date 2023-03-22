@@ -14,12 +14,8 @@ function App() {
     <div className="App">
       <HashRouter basename='/'>
         <CharactersProvider value={{characterName, setCharacterName}}>
-        {/* <script async defer 
-                crossOrigin="anonymous" 
-                src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v16.0&appId=2268895256627157&autoLogAppEvents=1" 
-                nonce="tOdeewMJ">
-        </script>
         <div id="fb-root"></div>
+        <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v16.0&appId=2268895256627157&autoLogAppEvents=1" nonce="nDwFF2ej"></script>
         <div  className="fb-login-button" 
               data-width="300px" 
               data-size="" 
@@ -27,8 +23,9 @@ function App() {
               data-layout="" 
               data-auto-logout-link="false" 
               data-use-continue-as="true"
-              onClick={fb_login()}>
-        </div> */}
+              // onClick={fb_login()}
+              >
+        </div>
           <AppRoutes />
         </CharactersProvider>
       </HashRouter>
