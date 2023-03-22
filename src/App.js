@@ -11,8 +11,9 @@ import './App.css';
 function App() {
 
   const [characterName, setCharacterName] = useState(LocalStorageService.get(LS_KEYS.NAME) || '');
+  const [userName, setUserName] = useState(LocalStorageService.get(LS_KEYS.USER) || '');
   const responseFacebook = (response) => {
-    console.log(response);
+    setUserName(response.name)
     LocalStorageService.set(LS_KEYS.USER, response.name)
   }
 
@@ -20,8 +21,8 @@ function App() {
     <div className="App">
       <HashRouter basename='/'>
         <CharactersProvider value={{characterName, setCharacterName}}>
-        {(LocalStorageService.get(LS_KEYS.USER))
-        ? <UserIcon state={LocalStorageService.get(LS_KEYS.USER)} />
+        {(userName)
+        ? <UserIcon state={userName} />
         : <FacebookLogin
               appId="1088597931155576"
               autoLoad={true}
