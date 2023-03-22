@@ -30,14 +30,16 @@
           FB.login(function(response){
             if (response.authResponse) {
               console.log('Welcome!  Fetching your information.... ');
-              handle_fb_data(response);
+              // handle_fb_data(response);
+              //here
+              console.log(response)
             } else {
               console.log('Походу пользователь передумал логиниться через ФБ');
             }
           });
         }
       }, {
-        scope: 'email,id'
+        scope: 'public_profile,email'
       });
     }
 
